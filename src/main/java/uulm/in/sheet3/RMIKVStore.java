@@ -51,7 +51,7 @@ public class RMIKVStore extends UnicastRemoteObject implements RemoteKVStore{
         try {
             RMIKVStore server = new RMIKVStore();
         } catch (RemoteException e){
-            throw new RemoteException("Expected Error");
+            throw new RemoteException("Unexpectd Key");
         }
     }
 }

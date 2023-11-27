@@ -6,13 +6,13 @@ import java.rmi.registry.Registry;
 public class RMIClient {
     public static void main(String[] args) {
         try {
-            // Verbindung zur RMI Registry auf localhost, Port 1099
+            //Verbindung zum RMI Registry, Port 1337
             Registry registry = LocateRegistry.getRegistry("localhost", 1337);
 
-            // Suche nach dem Remote-Objekt mit dem Namen "RemoteKVStore"
+            //Suche nach dem Remote-Objekt mit dem Namen "RemoteKVStore"
             RemoteKVStore remoteKVStore = (RemoteKVStore) registry.lookup("RemoteKVStore");
 
-            // Demonstriere die Funktionalität
+            //Testen aller Funktionalitäten
             remoteKVStore.writeRemote("123", "test1");
             System.out.println("Read key 123: " + remoteKVStore.readRemote("123"));
 
